@@ -19,15 +19,14 @@ public class Error {
         System.out.println(active);
         System.out.println(status);
         System.out.println(message);
+        System.out.println();
     }
 
     public static void main(String[] args) {
         Error error = new Error();
         error.printInfo();
-        System.out.println();
         Error first = new Error(true, 1, "The request has been completed!");
         first.printInfo();
-        System.out.println();
         Error second = new Error(false, 2, "The message hasn't been sent!");
         second.printInfo();
     }
