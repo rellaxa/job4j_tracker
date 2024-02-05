@@ -1,7 +1,5 @@
 package ru.job4j.ex;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
-
 public class JdbcConfig {
     public static void load(String url) throws UserInputException {
         if (url == null) {
