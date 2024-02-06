@@ -66,7 +66,7 @@ public class PasswordValidator {
             }
             if (hasUpCase && hasLowCase
             && hasDigit && hasSpecial) {
-                break;
+                return password;
             }
         }
         if (!hasUpCase) {
