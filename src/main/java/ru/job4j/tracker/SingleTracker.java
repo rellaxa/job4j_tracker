@@ -1,3 +1,4 @@
+
 package ru.job4j.tracker;
 
 public final class SingleTracker {
