@@ -7,7 +7,6 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.atomicReferenceArray;
 
 class ReconstructPhraseTest {
 
