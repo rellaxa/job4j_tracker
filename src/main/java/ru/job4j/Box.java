@@ -15,14 +15,14 @@ public class Box {
     public static void main(String[] args) {
         int a = 1;
         Integer b;
-        b = a; // b = Integer.valueOf(a);
+        b = a;
         System.out.println("Integer b = " + b);
 
         int x = 2;
         num(x);
 
         Integer m = 3;
-        int n = m; // n = m.intValue();
+        int n = m;
 
         Integer k = 5;
         Integer l = 6;

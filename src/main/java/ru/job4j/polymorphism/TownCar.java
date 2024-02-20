@@ -27,7 +27,7 @@ public class TownCar implements Vehicle {
     }
 
     @Override
-    public void chargeBattery() { //  можно явно не переопределять, так как он уже унаследован от интерфейса Vehicle.
+    public void chargeBattery() {
         Vehicle.super.chargeBattery();
     }
 }
