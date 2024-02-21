@@ -8,8 +8,8 @@ public class UsageMap {
         HashMap<String, String> map = new HashMap<>();
         map.put("relaxa@gmail.com", "FIO");
         map.put("qwerty@gmail.com", "hernick");
-        map.put("qwerty@gmail.com", "namelick");
-        map.put("testypu@gmail.com", "clessyver mind");
+        map.put("qwerty@gmail.com", "pulick");
+        map.put("testy@gmail.com", "clessyver mind");
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
