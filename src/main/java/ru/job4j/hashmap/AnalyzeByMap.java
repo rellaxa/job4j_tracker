@@ -34,11 +34,7 @@ public class AnalyzeByMap {
         List<Label> list = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                int sum = subject.score();
-                if (map.containsKey(subject.name())) {
-                    sum += map.get(subject.name());
-                }
-                map.put(subject.name(), sum);
+                map.put(subject.name(), subject.score() + map.getOrDefault(subject.name(), 0));
             }
         }
         for (String key : map.keySet()) {
@@ -65,11 +61,7 @@ public class AnalyzeByMap {
         List<Label> list = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                int sum = subject.score();
-                if (map.containsKey(subject.name())) {
-                    sum += map.get(subject.name());
-                }
-                map.put(subject.name(), sum);
+                map.put(subject.name(), subject.score() + map.getOrDefault(subject.name(), 0));
             }
         }
         for (String key : map.keySet()) {
