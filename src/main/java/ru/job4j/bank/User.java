@@ -2,8 +2,19 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает модель данных пользователя
+ * @author RELAXA
+ * @version 1.0
+ */
 public class User {
+    /**
+     * номер паспорта
+     */
     private String passport;
+    /**
+     * имя пользователя
+     */
     private String username;
 
     public User(String passport, String username) {
