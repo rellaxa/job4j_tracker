@@ -12,10 +12,10 @@ class PhoneDictionaryTest {
     void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
-                new Person("Relaxa", "Relaxing", "+17789286692", "290 Newport Dr, Port Moody, BC V3H 5N2, Canada")
+                new Person("Relaxa", "Chilling", "+17789286692", "290 Newport Dr, Port Moody, BC V3H 5N2, Canada")
         );
         ArrayList<Person> persons = phones.find("Relaxa");
-        assertThat(persons.get(0).getSurname()).isEqualTo("Relaxing");
+        assertThat(persons.get(0).getSurname()).isEqualTo("Chilling");
     }
 
     void whenNotFindByAddress() {
