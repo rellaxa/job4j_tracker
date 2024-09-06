@@ -5,7 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Item implements Comparable<Item> {
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+    private static final DateTimeFormatter FORMATTER =
+            DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
     private LocalDateTime created = LocalDateTime.now();
     private int id;
     private String name;
@@ -41,6 +42,10 @@ public class Item implements Comparable<Item> {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     @Override

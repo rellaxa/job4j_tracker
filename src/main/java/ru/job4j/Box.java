@@ -43,5 +43,6 @@ public class Box {
             list.add(i);
         }
         System.out.println(list);
+        Integer i = 5;
     }
 }

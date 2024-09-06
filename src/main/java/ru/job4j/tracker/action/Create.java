@@ -17,11 +17,11 @@ public class Create implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store memTracker) {
         output.println("=== Создание новой заявки ===");
         String name = input.askStr("Введите имя: ");
         Item item = new Item(name);
-        tracker.add(item);
+        memTracker.add(item);
         output.println("Добавленная заявка: " + item);
         return true;
     }
