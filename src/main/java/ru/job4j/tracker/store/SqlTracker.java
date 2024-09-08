@@ -1,5 +1,6 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.store;
 
+import ru.job4j.tracker.*;
 import ru.job4j.tracker.action.*;
 
 import java.io.InputStream;
@@ -80,6 +81,9 @@ public class SqlTracker implements Store {
             statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
             statement.setInt(3, id);
             result = statement.executeUpdate() > 0;
+            if (result) {
+                item.setId(id);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -145,26 +149,5 @@ public class SqlTracker implements Store {
             e.printStackTrace();
         }
         return item;
-    }
-
-    public static void main(String[] args) {
-        Output output = new ConsoleOutput();
-        Input input = new ValidateInput(output,
-                new ConsoleInput());
-
-        try (Store memTracker = new SqlTracker()) {
-            List<UserAction> actions = Arrays.asList(
-                    new Create(output),
-                    new FindAll(output),
-                    new Replace(output),
-                    new Delete(output),
-                    new FindById(output),
-                    new FindByName(output),
-                    new Exit(output)
-            );
-            new StartUI(output).init(input, memTracker, actions);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

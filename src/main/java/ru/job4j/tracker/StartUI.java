@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.action.*;
+import ru.job4j.tracker.store.SqlTracker;
+import ru.job4j.tracker.store.Store;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +40,7 @@ public class StartUI {
         Input input = new ValidateInput(output,
                 new ConsoleInput());
 
-        try (Store memTracker = new MemTracker()) {
+        try (Store memTracker = new SqlTracker()) {
             List<UserAction> actions = Arrays.asList(
                     new Create(output),
                     new FindAll(output),
