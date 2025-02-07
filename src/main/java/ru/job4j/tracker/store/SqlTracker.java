@@ -1,12 +1,10 @@
 package ru.job4j.tracker.store;
 
 import ru.job4j.tracker.*;
-import ru.job4j.tracker.action.*;
 
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -35,13 +33,6 @@ public class SqlTracker implements Store {
             );
         } catch (Exception e) {
             throw new IllegalStateException(e);
-        }
-    }
-
-    @Override
-    public void close() throws SQLException {
-        if (connection != null) {
-            connection.close();
         }
     }
 
@@ -149,5 +140,12 @@ public class SqlTracker implements Store {
             e.printStackTrace();
         }
         return item;
+    }
+
+    @Override
+    public void close() throws SQLException {
+        if (connection != null) {
+            connection.close();
+        }
     }
 }

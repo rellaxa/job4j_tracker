@@ -6,6 +6,7 @@ import ru.job4j.tracker.Output;
 import ru.job4j.tracker.store.Store;
 
 public class Delete implements UserAction {
+
     private final Output output;
 
     public Delete(Output output) {

@@ -5,6 +5,7 @@ import ru.job4j.tracker.Input;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Output;
 import ru.job4j.tracker.StubOutput;
+import ru.job4j.tracker.store.MemTracker;
 import ru.job4j.tracker.store.SqlTracker;
 import ru.job4j.tracker.store.Store;
 
@@ -18,7 +19,7 @@ class FindByNameTest {
     @Test
     public void whenFoundByName() {
         Output output = new StubOutput();
-        Store store = new SqlTracker();
+        Store store = new MemTracker();
         Item item = store.add(new Item("Item"));
         FindByName findByName = new FindByName(output);
 

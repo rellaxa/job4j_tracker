@@ -6,6 +6,7 @@ import ru.job4j.tracker.Output;
 import ru.job4j.tracker.store.Store;
 
 public class FindById implements UserAction {
+
     private Output output;
 
     public FindById(Output output) {

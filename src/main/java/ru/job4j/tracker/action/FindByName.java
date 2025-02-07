@@ -8,6 +8,7 @@ import ru.job4j.tracker.store.Store;
 import java.util.List;
 
 public class FindByName implements UserAction {
+
     private final Output output;
 
     public FindByName(Output output) {
