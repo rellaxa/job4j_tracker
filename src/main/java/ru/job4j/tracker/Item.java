@@ -5,10 +5,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Item implements Comparable<Item> {
+
     private static final DateTimeFormatter FORMATTER =
             DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+
     private LocalDateTime created = LocalDateTime.now();
+
     private int id;
+
     private String name;
 
     public Item() {
@@ -21,15 +25,6 @@ public class Item implements Comparable<Item> {
     public Item(int id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{"
-                + "id = " + id + '\''
-                + ", name = '" + name + '\''
-                + ", created = " + created.format(FORMATTER) + '\''
-                + '}';
     }
 
     public LocalDateTime getCreated() {
@@ -57,6 +52,11 @@ public class Item implements Comparable<Item> {
     }
 
     @Override
+    public int compareTo(Item o) {
+        return Integer.compare(id, o.id);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -74,7 +74,11 @@ public class Item implements Comparable<Item> {
     }
 
     @Override
-    public int compareTo(Item o) {
-        return Integer.compare(id, o.id);
+    public String toString() {
+        return "Item{"
+                + "id = " + id + '\''
+                + ", name = '" + name + '\''
+                + ", created = " + created.format(FORMATTER) + '\''
+                + '}';
     }
 }
