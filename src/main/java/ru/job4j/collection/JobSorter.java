@@ -18,5 +18,12 @@ public class JobSorter {
                 .thenComparing(new JobDescByPriority());
         Collections.sort(jobs, combine);
         System.out.println(jobs);
+
+        Comparator<Job> compareName = Comparator.comparing(Job::getName);
+        Comparator<Job> comparePriority = Comparator.comparingInt(Job::getPriority);
+        Comparator<Job> combiner = compareName.thenComparing(comparePriority);
+
+        jobs.sort(combiner);
+        System.out.println(jobs);
     }
 }

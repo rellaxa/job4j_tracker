@@ -1,7 +1,7 @@
 package ru.job4j.polymorphism;
 
 public interface Vehicle extends Fuel {
-    int WHEELS = 4;
+    public static final int WHEELS = 4;
 
     void accelerate();
 

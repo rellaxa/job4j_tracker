@@ -12,12 +12,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ListToMapTest {
     @Test
     void whenInputListNotHaveDuplicate() {
-        List<Student> list = Arrays.asList(
+        List<Student> students = Arrays.asList(
                 new Student(30, "Ivanov"),
                 new Student(40, "Petrov"),
                 new Student(50, "Sidorov")
         );
-        Map<String, Student> result = ListToMap.convert(list);
+        Map<String, Student> result = ListToMap.convert(students);
         Map<String, Student> expected = new LinkedHashMap<>();
         expected.put("Ivanov", new Student(30, "Ivanov"));
         expected.put("Petrov", new Student(40, "Petrov"));
@@ -27,14 +27,14 @@ class ListToMapTest {
 
     @Test
     void whenInputListHaveDuplicate() {
-        List<Student> list = Arrays.asList(
+        List<Student> students = Arrays.asList(
                 new Student(30, "Ivanov"),
                 new Student(40, "Petrov"),
                 new Student(50, "Ivanov"),
                 new Student(60, "Sidorov"),
                 new Student(70, "Petrov")
         );
-        Map<String, Student> result = ListToMap.convert(list);
+        Map<String, Student> result = ListToMap.convert(students);
         Map<String, Student> expected = new LinkedHashMap<>();
         expected.put("Ivanov", new Student(30, "Ivanov"));
         expected.put("Petrov", new Student(40, "Petrov"));

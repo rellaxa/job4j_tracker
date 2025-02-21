@@ -11,13 +11,8 @@ public class Departments {
         for (String value : departments) {
             String start = "";
             for (String element : value.split("/")) {
-                if (!temp.contains(start)) {
-                    temp.add(element);
-                    start = element;
-                } else {
-                    temp.add(start + "/" + element);
-                    start += "/" + element;
-                }
+                start += start.isEmpty() ? element : "/" + element;
+                temp.add(start);
             }
         }
         return new ArrayList<>(temp);

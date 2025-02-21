@@ -92,4 +92,10 @@ public class SqlTrackerTest {
         Item third = tracker.add(new Item("third"));
         assertThat(tracker.findAll()).isEqualTo(Arrays.asList(first, second, third));
     }
+
+    @Test
+    public void whenSave() {
+        SqlTracker tracker = new SqlTracker(connection);
+
+    }
 }

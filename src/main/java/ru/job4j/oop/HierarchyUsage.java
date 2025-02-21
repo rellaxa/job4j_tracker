@@ -13,7 +13,6 @@ public class HierarchyUsage {
         /* Приведение типа за счет понижения по иерархии. */
         Car carFromObject = (Car) objectCar;
 
-        /* Ошибка в приведении типа. */
         Object bicycle = new Bicycle();
 
         System.out.println(new Car());

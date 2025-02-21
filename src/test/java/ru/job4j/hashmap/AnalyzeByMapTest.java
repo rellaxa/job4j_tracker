@@ -1,14 +1,11 @@
 package ru.job4j.hashmap;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
-public class AnalyzeByMapTest {
-
+class AnalyzeByMapTest {
     @Test
     public void whenAverageScore() {
         double average = AnalyzeByMap.averageScore(
@@ -119,13 +116,15 @@ public class AnalyzeByMapTest {
                                 )
                         ),
                         new Pupil("Petrov",
-                                List.of(new Subject("Math", 80),
+                                List.of(
+                                        new Subject("Math", 80),
                                         new Subject("Lang", 80),
                                         new Subject("Philosophy", 70)
                                 )
                         ),
                         new Pupil("Sidorov",
-                                List.of(new Subject("Math", 70),
+                                List.of(
+                                        new Subject("Math", 70),
                                         new Subject("Lang", 60),
                                         new Subject("Philosophy", 50)
                                 )
@@ -140,7 +139,8 @@ public class AnalyzeByMapTest {
         Label best = AnalyzeByMap.bestSubject(
                 List.of(
                         new Pupil("Ivanov",
-                                List.of(new Subject("Math", 100),
+                                List.of(
+                                        new Subject("Math", 100),
                                         new Subject("Lang", 60),
                                         new Subject("Philosophy", 80)
                                 )
@@ -153,7 +153,8 @@ public class AnalyzeByMapTest {
                                 )
                         ),
                         new Pupil("Sidorov",
-                                List.of(new Subject("Philosophy", 50),
+                                List.of(
+                                        new Subject("Philosophy", 50),
                                         new Subject("Math", 70),
                                         new Subject("Lang", 60)
                                 )
@@ -163,4 +164,3 @@ public class AnalyzeByMapTest {
         assertThat(best).isEqualTo(new Label("Math", 250D));
     }
 }
-

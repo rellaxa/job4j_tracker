@@ -11,5 +11,7 @@ public class Main {
         vehicle.brake();
         fuel.refill();
         Vehicle.getDragCoefficient();
+        Vehicle townCar = new TownCar();
+        townCar.chargeBattery();
     }
 }

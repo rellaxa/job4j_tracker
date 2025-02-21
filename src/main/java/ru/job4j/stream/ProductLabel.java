@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 
 public class ProductLabel {
     public List<String> generateLabels(List<Product> products) {
-        List<Label> strings = new ArrayList<>();
         return products.stream()
                 .filter(product -> product.getStandard() - product.getActual() >= 0)
                 .filter(product -> product.getStandard() - product.getActual() <= 3)
-                .map(product -> new Label(product.getName(), product.getPrice() / 2).toString())
+                .map(product -> new Label(product.getName(), product.getPrice() / 2))
+                .map(Label::toString)
                 .collect(Collectors.toList());
     }
 }
