@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,6 +16,9 @@ public class Item implements Comparable<Item> {
     private int id;
 
     private String name;
+
+    public Item() {
+    }
 
     public Item(String name) {
         this.name = name;
