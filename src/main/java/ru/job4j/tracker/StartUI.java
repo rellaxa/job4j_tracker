@@ -1,7 +1,9 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.action.*;
+import ru.job4j.tracker.store.HbmTracker;
 import ru.job4j.tracker.store.MemTracker;
+import ru.job4j.tracker.store.SqlTracker;
 import ru.job4j.tracker.store.Store;
 
 import java.util.Arrays;
@@ -40,8 +42,7 @@ public class StartUI {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output,
                 new ConsoleInput());
-
-        try (Store memTracker = new MemTracker()) {
+        try (Store memTracker = new HbmTracker()) {
             List<UserAction> actions = Arrays.asList(
                     new Create(output),
                     new CreateManyItems(output),
