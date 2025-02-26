@@ -1,9 +1,6 @@
 package ru.job4j.tracker.store;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.job4j.tracker.Item;
 
 import java.io.InputStream;
@@ -42,7 +39,7 @@ public class SqlTrackerTest {
         connection.close();
     }
 
-    @AfterEach
+    @BeforeEach
     public void wipeTable() throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement("delete from items")) {
             statement.execute();
