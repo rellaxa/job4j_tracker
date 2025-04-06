@@ -19,7 +19,7 @@
         <profile>
             <id>test</id>
             <properties>
-                <liquibase.config>src/main/resources/db/liquibase_test.properties</liquibase.config>
+                <liquibase.config>src/test/resources/liquibase_test.properties</liquibase.config>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -30,6 +30,7 @@
             <properties>
                 <liquibase.config>src/main/resources/db/liquibase.properties</liquibase.config>
             </properties>
+
         </profile>
     </profiles>
 
